@@ -4,9 +4,10 @@ import {
   Routes,
   Route,
   Navigate,
+  HashRouter,
 } from "react-router-dom";
 import { LoginPage } from "../pages/login/LoginPage";
-import { RegisterPage } from "../pages/register/registerPage";
+import { RegisterPage } from "../pages/register/RegisterPage";
 import { MainPage } from "../pages/main/MainPage";
 
 const PlaceholderPage: React.FC<{ title: string }> = ({ title }) => (
@@ -19,7 +20,7 @@ const PlaceholderPage: React.FC<{ title: string }> = ({ title }) => (
 
 const AppRoutes = () => {
   return (
-    <Router>
+    <HashRouter>
       <Routes>
         <Route path="/login" element={<LoginPage />} />
         <Route path="/register" element={<RegisterPage />} />
@@ -29,7 +30,7 @@ const AppRoutes = () => {
           element={<PlaceholderPage title="404 - Страница не найдена" />}
         />
       </Routes>
-    </Router>
+    </HashRouter>
   );
 };
 
